@@ -1,0 +1,118 @@
+\begin{thebibliography}{10}
+
+\bibitem{Balsara:1999JCoPh.149..270B}
+Dinshaw~S. {Balsara} and Daniel~S. {Spicer}.
+\newblock {A Staggered Mesh Algorithm Using High Order Godunov Fluxes to Ensure Solenoidal Magnetic Fields in Magnetohydrodynamic Simulations}.
+\newblock {\em Journal of Computational Physics}, 149(2):270--292, March 1999.
+
+\bibitem{Bondi:1952MNRAS.112..195B}
+H.~{Bondi}.
+\newblock {On spherically symmetrical accretion}.
+\newblock {\em Mon. Not. Roy. Astron. Soc.}, 112:195, January 1952.
+
+\bibitem{Cho:2023wqr}
+Hyerin Cho, Ben~S. Prather, Ramesh Narayan, Priyamvada Natarajan, Kung-Yi Su, Angelo Ricarte, and Koushik Chatterjee.
+\newblock {Bridging Scales in Black Hole Accretion and Feedback: Magnetized Bondi Accretion in 3D GRMHD}.
+\newblock {\em Astrophys. J. Lett.}, 959(2):L22, 2023.
+
+\bibitem{Cho:2025lzq}
+Hyerin Cho, Ben~S. Prather, Ramesh Narayan, Kung-Yi Su, and Priyamvada Natarajan.
+\newblock {Bridging Scales in Black Hole Accretion and Feedback: Relativistic Jet linking the Horizon to the Host Galaxy}.
+\newblock {\em arxiv}, 7 2025.
+
+\bibitem{Cho:2024wsp}
+Hyerin Cho, Ben~S. Prather, Kung-Yi Su, Ramesh Narayan, and Priyamvada Natarajan.
+\newblock {Multizone Modeling of Black Hole Accretion and Feedback in 3D GRMHD: Bridging Vast Spatial and Temporal Scales}.
+\newblock {\em Astrophys. J.}, 977(2):200, 2024.
+
+\bibitem{Colella1984}
+P.~{Colella} and Paul~R. {Woodward}.
+\newblock {The Piecewise Parabolic Method (PPM) for Gas-Dynamical Simulations}.
+\newblock {\em Journal of Computational Physics}, 54:174--201, September 1984.
+
+\bibitem{1976ApJ...207..962F}
+L.~G. {Fishbone} and V.~{Moncrief}.
+\newblock {Relativistic fluid disks in orbit around Kerr black holes.}
+\newblock {\em Astrophys. J.}, 207:962--976, August 1976.
+
+\bibitem{Gardiner2008}
+Thomas~A. {Gardiner} and James~M. {Stone}.
+\newblock {An unsplit Godunov method for ideal MHD via constrained transport in three dimensions}.
+\newblock {\em Journal of Computational Physics}, 227(8):4123--4141, April 2008.
+
+\bibitem{Guo2023}
+Minghao {Guo}, James~M. {Stone}, Chang-Goo {Kim}, and Eliot {Quataert}.
+\newblock {Toward Horizon-scale Accretion onto Supermassive Black Holes in Elliptical Galaxies}.
+\newblock {\em Astrophys. J.}, 946(1):26, March 2023.
+
+\bibitem{Guo2024}
+Minghao {Guo}, James~M. {Stone}, Eliot {Quataert}, and Chang-Goo {Kim}.
+\newblock {Magnetized Accretion onto and Feedback from Supermassive Black Holes in Elliptical Galaxies}.
+\newblock {\em arXiv e-prints}, page arXiv:2405.11711, May 2024.
+
+\bibitem{Guo:2025sjb}
+Minghao Guo, James~M. Stone, Eliot Quataert, and Volker Springel.
+\newblock {Cyclic Zoom: Multi-scale GRMHD Modeling of Black Hole Accretion and Feedback}.
+\newblock {\em arxiv}, 4 2025.
+
+\bibitem{Hopkins:2023ipv}
+Philip~F. {Hopkins}, Michael~Y. {Grudic}, Kung-Yi {Su}, Sarah {Wellons}, Daniel {Angles-Alcazar}, Ulrich~P. {Steinwandel}, David {Guszejnov}, Norman {Murray}, Claude-Andre {Faucher-Giguere}, Eliot {Quataert}, and Dusan {Keres}.
+\newblock {FORGE'd in FIRE: Resolving the End of Star Formation and Structure of AGN Accretion Disks from Cosmological Initial Conditions}.
+\newblock {\em The Open Journal of Astrophysics}, 7:18, March 2024.
+
+\bibitem{Hopkins2023}
+Philip~F. {Hopkins}, Jonathan {Squire}, Kung-Yi {Su}, Ulrich~P. {Steinwandel}, Kyle {Kremer}, Yanlong {Shi}, Michael~Y. {Grudic}, Sarah {Wellons}, Claude-Andre {Faucher-Giguere}, Daniel {Angles-Alcazar}, Norman {Murray}, and Eliot {Quataert}.
+\newblock {FORGE'd in FIRE II: The Formation of Magnetically-Dominated Quasar Accretion Disks from Cosmological Initial Conditions}.
+\newblock {\em The Open Journal of Astrophysics}, 7:19, March 2024.
+
+\bibitem{Lalakos:2022qhl}
+Aretaios Lalakos, Ore Gottlieb, Nick Kaaz, Koushik Chatterjee, Matthew Liska, Ian~M. Christie, Alexander Tchekhovskoy, Irina Zhuravleva, and Elena Nokhrina.
+\newblock {Bridging the Bondi and Event Horizon Scales: 3D GRMHD Simulations Reveal X-shaped Radio Galaxy Morphology}.
+\newblock {\em Astrophys. J. Lett.}, 936(1):L5, 2022.
+
+\bibitem{Lalakos:2023ean}
+Aretaios Lalakos, Alexander Tchekhovskoy, Omer Bromberg, Ore Gottlieb, Jonatan Jacquemin-Ide, Matthew Liska, and Haocheng Zhang.
+\newblock {Jets with a Twist: The Emergence of FR0 Jets in a 3D GRMHD Simulation of Zero-angular-momentum Black Hole Accretion}.
+\newblock {\em Astrophys. J.}, 964(1):79, 2024.
+
+\bibitem{Lalakos:2025msz}
+Aretaios {Lalakos}, Alexander {Tchekhovskoy}, Elias~R. {Most}, Bart {Ripperda}, Koushik {Chatterjee}, and Matthew {Liska}.
+\newblock {Universal Radial Scaling of Large-Scale Black Hole Accretion for Magnetically Arrested And Rocking Accretion Disks}.
+\newblock {\em arXiv e-prints}, page arXiv:2505.23888, May 2025.
+
+\bibitem{2009ApJ...691.1092L}
+M.~Nicole {Lemaster} and James~M. {Stone}.
+\newblock {Dissipation and Heating in Supersonic Hydrodynamic and MHD Turbulence}.
+\newblock {\em Astrophys. J.}, 691(2):1092--1108, February 2009.
+
+\bibitem{Miyoshi2005}
+Takahiro {Miyoshi} and Kanya {Kusano}.
+\newblock {A multi-state HLL approximate Riemann solver for ideal magnetohydrodynamics}.
+\newblock {\em Journal of Computational Physics}, 208(1):315--344, September 2005.
+
+\bibitem{S:2023gta}
+Hector R.~Olivares S., Monika~A. Moscibrodzka, and Oliver Porth.
+\newblock {General relativistic hydrodynamic simulations of perturbed transonic accretion}.
+\newblock {\em Astron. Astrophys.}, 678:A141, 2023.
+
+\bibitem{athenak}
+James~M. {Stone}, Patrick~D. {Mullen}, Drummond {Fielding}, Philipp {Grete}, Minghao {Guo}, Philipp {Kempski}, Elias~R. {Most}, Christopher~J. {White}, and George~N. {Wong}.
+\newblock {AthenaK: A Performance-Portable Version of the Athena++ AMR Framework}.
+\newblock {\em arXiv e-prints}, page arXiv:2409.16053, September 2024.
+
+\bibitem{Stone2020}
+James~M. {Stone}, Kengo {Tomida}, Christopher~J. {White}, and Kyle~G. {Felker}.
+\newblock {The Athena++ Adaptive Mesh Refinement Framework: Design and Magnetohydrodynamic Solvers}.
+\newblock {\em Astrophys. J.s}, 249(1):4, July 2020.
+
+\bibitem{Trott2021}
+Christian {Trott}, Luc {Berger-Vergiat}, David {Poliakoff}, Sivasankaran {Rajamanickam}, Damien {Lebrun-Grandie}, Jonathan {Madsen}, Nader {Al Awar}, Milos {Gligoric}, Galen {Shipman}, and Geoff {Womeldorff}.
+\newblock {The Kokkos EcoSystem: Comprehensive Performance Portability for High Performance Computing}.
+\newblock {\em Computing in Science and Engineering}, 23(5):10--18, September 2021.
+
+\bibitem{Yuan:2012ApJ...761..129Y}
+Feng {Yuan}, Maochun {Wu}, and Defu {Bu}.
+\newblock {Numerical Simulation of Hot Accretion Flows. I. A Large Radial Dynamical Range and the Density Profile of Accretion Flow}.
+\newblock {\em \apj}, 761(2):129, December 2012.
+
+\end{thebibliography}

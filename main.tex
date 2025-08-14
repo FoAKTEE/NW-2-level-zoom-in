@@ -61,27 +61,43 @@
 \begin{CJK*}{UTF8}{gbsn}
 \title{Towards Multiscale Neural Operator Framework of Accretion and Feedback Applications}
 
-\author{Nihaal Bhojwani $^\delta$}
-\affiliation{Computing and Mathematical Sciences, California Institute of Technology, CA 91125, USA}
-\affiliation{Department of Computer Sciences, University of Maryland}
+\author{%
+  Nihaal Bhojwani$^{\delta}$ \\
+  Computing and Mathematical Sciences\\
+  California Institute of Technology\\
+  Pasadena, CA 91125, USA \\
+  \texttt{nbhojwan@caltech.edu} \\
+  \And
+  Chuwei Wang (王楚惟)$^{\delta}$ \\
+  Computing and Mathematical Sciences\\
+  California Institute of Technology\\
+  Pasadena, CA 91125,   USA \\
+  \texttt{cwang23@caltech.edu} \\
+  \And
+  Hai-Yang Wang (王海洋)$^{\delta}$ \\
+  TAPIR, California Institute of Technology\\
+  Pasadena, CA 91125, USA \\
+  \texttt{hywang@tapir.caltech.edu} \\
+  \And
+  Chang Sun (孙畅) \\
+  Department of Physics\\
+  California Institute of Technology\\
+  Pasadena, CA 91125, USA \\
+  \texttt{changsun@caltech.edu} \\
+  \And
+  Elias R. Most \\
+  TAPIR, California Institute of Technology\\
+  Pasadena, CA 91125, USA \\
+  \texttt{emost@caltech.edu} \\
+  \And
+  Anima Anandkumar \\
+  Computing and Mathematical Sciences\\
+  California Institute of Technology\\
+  Pasadena, CA 91125, USA \\
+  \texttt{anima@caltech.edu} \\
+}
 
-\author{Chuwei Wang (王楚惟) $^\delta$ \orcidlink{0009-0008-1252-0114}}
-\affiliation{Computing and Mathematical Sciences, California Institute of Technology, CA 91125, USA}
-
-\author{Hai-Yang Wang (王海洋) $^\delta$ \orcidlink{0000-0001-7167-6110}} 
-\affiliation{TAPIR, California Institute of Technology, Pasadena, CA 91125, USA}
-\affiliation{Walter Burke Institute for Theoretical Physics, California Institute of Technology, Pasadena, CA 91125, USA}
-
-\author{Chang Sun (孙畅) \orcidlink{0000-0003-2774-175X}}
-\affiliation{Department of Physics, California Institute of Technology, Pasadena, CA 91125, USA}
-
-\author{Elias R. Most \orcidlink{0000-0002-0491-1210}}
-\affiliation{TAPIR, California Institute of Technology, Pasadena, CA 91125, USA}
-\affiliation{Walter Burke Institute for Theoretical Physics, California Institute of Technology, Pasadena, CA 91125, USA}
-
-\author{Anima  Anandkumar \orcidlink{0000-0002-6974-6797}}
-\affiliation{Computing and Mathematical Sciences, California Institute of Technology, CA 91125, USA}
-
+\maketitle
 
 \begin{abstract}
 % Black hole feedback zoom-in and out \cite{Guo:2025sjb}
@@ -92,8 +108,8 @@ As a first step towards multiscale simulations, we focus on black hole feeding a
 This method is generally applicable as the subgrid model of all the central accretor problems.
 \end{abstract}
 
-\maketitle
-\footnotetext{\footnotesize $\delta$ equal contribution}
+
+% \footnotetext{\footnotesize $\delta$ equal contribution}
 % \footnote{$\delta$ equal contribution}
 
 \end{CJK*}
@@ -471,218 +487,220 @@ Part of this project was completed during the Caltech relativistic astrophysics 
 
 
 
-\clearpage
+% \appendix
+% \onecolumngrid
 
-\appendix
-\onecolumngrid
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.3\linewidth]{figures/ct.png}
+%     \caption{
+%     Positions of hydrodynamic variables, magnetic fields, and electric fields. The hydrodynamic variables are at the body-center of each cell, while the electric fields and magnetic fields are at the face-centers and edge-centers.
+%     } 
+%     \label{fig:ct}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.3\linewidth]{figures/ct.png}
-    \caption{
-    Positions of hydrodynamic variables, magnetic fields, and electric fields. The hydrodynamic variables are at the body-center of each cell, while the electric fields and magnetic fields are at the face-centers and edge-centers.
-    } 
-    \label{fig:ct}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.4\linewidth]{figures/ct-2.png}
+%     \caption{
+%     \hywcom{Adopting from Athena method paper-remake later}
+%     The schematic diagram of the x-y slice, in which shows the cell-centered reference state of EMF $E^r_z$, cell-cornered EMF $E_z$ used for recovering the area-averaged magnetic field, and the fluxes of conserved variables in the x and y directions.
+%     } 
+%     \label{fig:ct-2}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.4\linewidth]{figures/ct-2.png}
-    \caption{
-    \hywcom{Adopting from Athena method paper-remake later}
-    The schematic diagram of the x-y slice, in which shows the cell-centered reference state of EMF $E^r_z$, cell-cornered EMF $E_z$ used for recovering the area-averaged magnetic field, and the fluxes of conserved variables in the x and y directions.
-    } 
-    \label{fig:ct-2}
-\end{figure}
+% \section{Constraint Transport on the Boundary: NO as Riemann Solver }
 
-\section{Constraint Transport on the Boundary: NO as Riemann Solver }
-
-\subsection{Review: Divergence-Free Magnetic Field and Constraint Transport}
-The magnetic fields are evolved via Stoke's law:
-\begin{equation}
-\frac{\partial}{\partial t} \int_S \boldsymbol{B} \cdot d \boldsymbol{S}=-\int_L \boldsymbol{E} \cdot d \boldsymbol{l} \,,
-\end{equation}
-in the differential form : 
-\begin{equation}
-\frac{\partial \boldsymbol{B}}{\partial t}+\nabla \times \boldsymbol{E} =0 \,,
-\end{equation}
-where the electric field (electromotive force [EMF]) $\boldsymbol{E}=-\boldsymbol{v}\times \boldsymbol{B}$ in ideal MHD. 
+% \subsection{Review: Divergence-Free Magnetic Field and Constraint Transport}
+% The magnetic fields are evolved via Stoke's law:
+% \begin{equation}
+% \frac{\partial}{\partial t} \int_S \boldsymbol{B} \cdot d \boldsymbol{S}=-\int_L \boldsymbol{E} \cdot d \boldsymbol{l} \,,
+% \end{equation}
+% in the differential form : 
+% \begin{equation}
+% \frac{\partial \boldsymbol{B}}{\partial t}+\nabla \times \boldsymbol{E} =0 \,,
+% \end{equation}
+% where the electric field (electromotive force [EMF]) $\boldsymbol{E}=-\boldsymbol{v}\times \boldsymbol{B}$ in ideal MHD. 
 
 
-Constraint transport (CT) algorithm update the area-averaged magnetic fields using the line-averaged EMF at cell corners. First, we can separately define the face-centered, area-averaged magnetic field $\left(B_x\right)_{i+1 / 2, j, k}$ and the edge-centered, line-averaged EMF $\left(E_x\right)_{i, j+1 / 2, k-1 / 2}$ as follow (taking $x$-component as an example): 
-\begin{align}
-&\left(B_x\right)_{i+1 / 2, j, k} =\frac{1}{\Delta y \Delta z} \int_S B_x(y, z) d y d z\, , \\
-&\left(E_x\right)_{i, j+1 / 2, k-1 / 2} =\frac{1}{\Delta x \Delta t} \int E_x(x) d x d t\, ,
-\end{align}
-
-
-
-The magnetic field at the $n+1$ timestep is updated using the electro-magnetic forces accordingly
-\begin{equation}
-B_{x, i+1 / 2, j, k}^{n+1}=B_{x, i+1 / 2, j, k}^n-\frac{\Delta t}{\Delta y}\left(E_{z, i-1 / 2, j+1 / 2, k}^{n+1 / 2}-E_{z, i-1 / 2, j-1 / 2, k}^{n+1 / 2}\right)+\frac{\Delta t}{\Delta z}\left(E_{y, i-1 / 2, j, k+1 / 2}^{n+1 / 2}-E_{z, i-1 / 2, j, k-1 / 2}^{n+1 / 2}\right)
-\end{equation}
-Then the divergence of magnetic field $\nabla\cdot \boldsymbol{B}$ is preserved to machine accuracy
-\begin{equation}
-\nabla \cdot \boldsymbol{B}  =\frac{B_{x, i+1 / 2, j, k}-B_{x, i-1 / 2, j, k}}{\Delta x} 
- +\frac{B_{y, i, j+1 / 2, k}-B_{x, i, j-1 / 2, k}}{\Delta y} 
- +\frac{B_{z, i, j, k+1 / 2}-B_{z, i, j, k-1 / 2}}{\Delta z}
-\end{equation}
-
-\subsection{Coupling NO with Constraint Transport}
-In \texttt{Athena++/K}, it is the Riemann solver that returns area-averaged electric fields at cell faces, while the CT requires the line-averaged EMF at cell corners to update the area-averaged magnetic fields, here this is achieved by \cite{Gardiner:2005JCoPh.205..509G,Gardiner2008,Stone:2008mh}:
-\begin{align}
-E_{z, i-1 / 2, j-1 / 2}= 
-&\frac{1}{4}\left(E_{z, i-1 / 2, j}+E_{z, i-1 / 2, j+1}+E_{z, i, j-1 / 2}+E_{z, i+1, j-1 / 2}\right) \\
-&+\frac{\delta y}{8}\left[\left(\frac{\partial E_z}{\partial y}\right)_{i-1 / 2, j-1 / 4}-\left(\frac{\partial E_z}{\partial y}\right)_{i-1 / 2, j-3 / 4}\right] \\
-&+\frac{\delta x}{8}\left[\left(\frac{\partial E_z}{\partial x}\right)_{i-1 / 4, j-1 / 2}-\left(\frac{\partial E_z}{\partial x}\right)_{i-3 / 4, j-1 / 2}\right] \,,  \label{eq:ct-1}
-\end{align}
-where the derivatived of EMF on each cell face is computed from the upwinded contact mode from the Riemann solver, i.e., suppressing the $j$ subscript,
-\begin{equation}
-\left(\frac{\partial E_z}{\partial y}\right)_{i-1 / 2}= 
-\begin{cases}
-\left(\partial E_z / \partial y\right)_{i-1}, & \text { for } v_{x, i-1 / 2}>0 \\ 
-\left(\partial E_z / \partial y\right)_i, & \text { for } v_{x, i-1 / 2}<0 \\ 
-\frac{1}{2}\left[\left(\frac{\partial E_z}{\partial y}\right)_{i-1}+\left(\frac{\partial E_z}{\partial y}\right)_i\right], & \text { otherwise },
-\end{cases}
-\end{equation}
-The cell-centered derivatives of EMF are calculated from the face-centered EMF (Godunov flux) and cell-centered reference EMF $E^r_z$ (see Fig. \ref{fig:ct-2}):
-\begin{equation}
-\left(\frac{\partial E_z}{\partial y}\right)_{i, j-1 / 4}=2\left(\frac{E_{z, i, j}^r-E_{z, i, j-1 / 2}}{\delta y}\right), \label{eq:ct-2}
-\end{equation}
-For more details on how to compute the reference EMF in certain timestep \hywcom{refine the description here}, see \cite{Stone:2008mh}. 
-
-Since the NO is trained to predict the cell-centered volume-averaged magnetic field, from Eq. \ref{eq:ct-1} and \ref{eq:ct-2}, we replace the face-centered EMF from Riemann solver with that from NO prediction (using the )
-
-
-
-\section{Global Angular Momentum Transport}
-\label{app:amt}
-
-\subsection{Cylindrical Coordinate}
-
-In this section we want to briefly review the equations governing the transport of total angular momentum. We do so by starting out with the ideal MHD equations in cylindrical coordinates. Denoting %$\varpi$ 
-$R$ as the cylindrical radius and $z$ as the height coordinate, the conserved angular momentum density $j$\footnote{\hyw{The specific angular momentum is $l=R v_\phi$. To have the conserved angular momentum in the radial direction, one need to do the integration along both azimuthal and vertical directions $\int R d\phi \int dz \rho l=\int d\phi \int dz (R^2 \rho v_\phi)$. So the conserved angular momentum current across different cylinders (having $R$ constant) has the form of $j=R^2 \rho v_\phi$}} then given by
-\begin{align}
-    j = R^2 \rho v_\phi\,
-\end{align}
-The momentum equation then takes the form
-\begin{align}
-    \partial_t j + \partial_R \left( j v_R + R^2 B_R B_\phi \right) + \partial_\phi \left( {j} + R B_\phi B_\phi + R \bar{P}\right) + \partial_z \left(j v_z  + R^2 B_z B_\phi\right) - R \rho \partial_\phi \Phi_g = 0.
-\end{align}
-In practice, we are mainly interested in the transport of angular momentum in radius $R$ and height $z$, so we will average over the $\phi$ direction. This is appropriate for both the outer and the individual minidisks.
-Defining the azimuthally averaged angular momentum density,
-\begin{align}
-    \left<j\right>_\phi = \int_0^{2\pi}{\rm d}\, \phi j\,
-\end{align}
-we obtain
-\begin{align}
-\partial_t \left<j\right>_\phi + \partial_R \left( \left<j v_R \right>_\phi + R^2 \left<B_R B_\phi\right>_\phi \right) + \partial_z \left(\left< j v_z \right>_\phi + R^2 \left<B_z B_\phi \right>_\phi \right) - R \left<\rho \partial_\phi \Phi_g\right>_\phi = 0.
-\end{align}
-the components appearing as derivatives in $\phi$ are canceled from the azimuthally periodic nature.
-
-\subsection{Spherical Coordinate}
-
-\subsubsection{Radial Angular Momentum Balance}
-
-% \hyw{The angular momentum balance in the radial direction requires integrating in both azimuthal and vertical direction. The momentum equation is modified as}
+% Constraint transport (CT) algorithm update the area-averaged magnetic fields using the line-averaged EMF at cell corners. First, we can separately define the face-centered, area-averaged magnetic field $\left(B_x\right)_{i+1 / 2, j, k}$ and the edge-centered, line-averaged EMF $\left(E_x\right)_{i, j+1 / 2, k-1 / 2}$ as follow (taking $x$-component as an example): 
 % \begin{align}
-% \hyw{
-% \partial_t \left<j\right>_\phi + \partial_R \left( \left<j v_R \right>_\phi + R \left<B_R B_\phi\right>_\phi \right) + \partial_z \left(\left< j v_z \right>_\phi + R \left<B_z B_\phi \right>_\phi \right) - R \left<\rho \partial_\phi \Phi_g\right>_\phi = 0.}
+% &\left(B_x\right)_{i+1 / 2, j, k} =\frac{1}{\Delta y \Delta z} \int_S B_x(y, z) d y d z\, , \\
+% &\left(E_x\right)_{i, j+1 / 2, k-1 / 2} =\frac{1}{\Delta x \Delta t} \int E_x(x) d x d t\, ,
 % \end{align}
 
+
+
+% The magnetic field at the $n+1$ timestep is updated using the electro-magnetic forces accordingly
+% \begin{equation}
+% B_{x, i+1 / 2, j, k}^{n+1}=B_{x, i+1 / 2, j, k}^n-\frac{\Delta t}{\Delta y}\left(E_{z, i-1 / 2, j+1 / 2, k}^{n+1 / 2}-E_{z, i-1 / 2, j-1 / 2, k}^{n+1 / 2}\right)+\frac{\Delta t}{\Delta z}\left(E_{y, i-1 / 2, j, k+1 / 2}^{n+1 / 2}-E_{z, i-1 / 2, j, k-1 / 2}^{n+1 / 2}\right)
+% \end{equation}
+% Then the divergence of magnetic field $\nabla\cdot \boldsymbol{B}$ is preserved to machine accuracy
+% \begin{equation}
+% \nabla \cdot \boldsymbol{B}  =\frac{B_{x, i+1 / 2, j, k}-B_{x, i-1 / 2, j, k}}{\Delta x} 
+%  +\frac{B_{y, i, j+1 / 2, k}-B_{x, i, j-1 / 2, k}}{\Delta y} 
+%  +\frac{B_{z, i, j, k+1 / 2}-B_{z, i, j, k-1 / 2}}{\Delta z}
+% \end{equation}
+
+% \subsection{Coupling NO with Constraint Transport}
+% In \texttt{Athena++/K}, it is the Riemann solver that returns area-averaged electric fields at cell faces, while the CT requires the line-averaged EMF at cell corners to update the area-averaged magnetic fields, here this is achieved by \cite{Gardiner:2005JCoPh.205..509G,Gardiner2008,Stone:2008mh}:
+% \begin{align}
+% E_{z, i-1 / 2, j-1 / 2}= 
+% &\frac{1}{4}\left(E_{z, i-1 / 2, j}+E_{z, i-1 / 2, j+1}+E_{z, i, j-1 / 2}+E_{z, i+1, j-1 / 2}\right) \\
+% &+\frac{\delta y}{8}\left[\left(\frac{\partial E_z}{\partial y}\right)_{i-1 / 2, j-1 / 4}-\left(\frac{\partial E_z}{\partial y}\right)_{i-1 / 2, j-3 / 4}\right] \\
+% &+\frac{\delta x}{8}\left[\left(\frac{\partial E_z}{\partial x}\right)_{i-1 / 4, j-1 / 2}-\left(\frac{\partial E_z}{\partial x}\right)_{i-3 / 4, j-1 / 2}\right] \,,  \label{eq:ct-1}
+% \end{align}
+% where the derivatived of EMF on each cell face is computed from the upwinded contact mode from the Riemann solver, i.e., suppressing the $j$ subscript,
+% \begin{equation}
+% \left(\frac{\partial E_z}{\partial y}\right)_{i-1 / 2}= 
+% \begin{cases}
+% \left(\partial E_z / \partial y\right)_{i-1}, & \text { for } v_{x, i-1 / 2}>0 \\ 
+% \left(\partial E_z / \partial y\right)_i, & \text { for } v_{x, i-1 / 2}<0 \\ 
+% \frac{1}{2}\left[\left(\frac{\partial E_z}{\partial y}\right)_{i-1}+\left(\frac{\partial E_z}{\partial y}\right)_i\right], & \text { otherwise },
+% \end{cases}
+% \end{equation}
+% The cell-centered derivatives of EMF are calculated from the face-centered EMF (Godunov flux) and cell-centered reference EMF $E^r_z$ (see Fig. \ref{fig:ct-2}):
+% \begin{equation}
+% \left(\frac{\partial E_z}{\partial y}\right)_{i, j-1 / 4}=2\left(\frac{E_{z, i, j}^r-E_{z, i, j-1 / 2}}{\delta y}\right), \label{eq:ct-2}
+% \end{equation}
+% For more details on how to compute the reference EMF in certain timestep \hywcom{refine the description here}, see \cite{Stone:2008mh}. 
+
+% Since the NO is trained to predict the cell-centered volume-averaged magnetic field, from Eq. \ref{eq:ct-1} and \ref{eq:ct-2}, we replace the face-centered EMF from Riemann solver with that from NO prediction (using the )
+
+
+
+% \section{Global Angular Momentum Transport}
+% \label{app:amt}
+
+% \subsection{Cylindrical Coordinate}
+
+% In this section we want to briefly review the equations governing the transport of total angular momentum. We do so by starting out with the ideal MHD equations in cylindrical coordinates. Denoting %$\varpi$ 
+% $R$ as the cylindrical radius and $z$ as the height coordinate, the conserved angular momentum density $j$\footnote{\hyw{The specific angular momentum is $l=R v_\phi$. To have the conserved angular momentum in the radial direction, one need to do the integration along both azimuthal and vertical directions $\int R d\phi \int dz \rho l=\int d\phi \int dz (R^2 \rho v_\phi)$. So the conserved angular momentum current across different cylinders (having $R$ constant) has the form of $j=R^2 \rho v_\phi$}} then given by
+% \begin{align}
+%     j = R^2 \rho v_\phi\,
+% \end{align}
+% The momentum equation then takes the form
+% \begin{align}
+%     \partial_t j + \partial_R \left( j v_R + R^2 B_R B_\phi \right) + \partial_\phi \left( {j} + R B_\phi B_\phi + R \bar{P}\right) + \partial_z \left(j v_z  + R^2 B_z B_\phi\right) - R \rho \partial_\phi \Phi_g = 0.
+% \end{align}
+% In practice, we are mainly interested in the transport of angular momentum in radius $R$ and height $z$, so we will average over the $\phi$ direction. This is appropriate for both the outer and the individual minidisks.
+% Defining the azimuthally averaged angular momentum density,
+% \begin{align}
+%     \left<j\right>_\phi = \int_0^{2\pi}{\rm d}\, \phi j\,
+% \end{align}
+% we obtain
+% \begin{align}
+% \partial_t \left<j\right>_\phi + \partial_R \left( \left<j v_R \right>_\phi + R^2 \left<B_R B_\phi\right>_\phi \right) + \partial_z \left(\left< j v_z \right>_\phi + R^2 \left<B_z B_\phi \right>_\phi \right) - R \left<\rho \partial_\phi \Phi_g\right>_\phi = 0.
+% \end{align}
+% the components appearing as derivatives in $\phi$ are canceled from the azimuthally periodic nature.
+
+% \subsection{Spherical Coordinate}
+
+% \subsubsection{Radial Angular Momentum Balance}
+
+% % \hyw{The angular momentum balance in the radial direction requires integrating in both azimuthal and vertical direction. The momentum equation is modified as}
+% % \begin{align}
+% % \hyw{
+% % \partial_t \left<j\right>_\phi + \partial_R \left( \left<j v_R \right>_\phi + R \left<B_R B_\phi\right>_\phi \right) + \partial_z \left(\left< j v_z \right>_\phi + R \left<B_z B_\phi \right>_\phi \right) - R \left<\rho \partial_\phi \Phi_g\right>_\phi = 0.}
+% % \end{align}
+
+% % \begin{equation*}
+% % \frac{\partial (\rho v)}{\partial t} +\nabla \cdot (\rho vv+\overline{P}\mathbb{I} -BB)=-\rho \nabla \Phi 
+% % \end{equation*}
+% Angular momentum flux advected along the disk can be calculated by doing the integration in the $\phi$ and z directions. For convenience, in the following we will use the notation:
+% \begin{align*}
+% \displaystyle < Q >_{\phi ,z}( R) &=\int _{0}^{2\pi } d\phi^\prime \int _{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}} dz^\prime\cdot Q( R,\phi^\prime ,z^\prime) \\
+% < Q >_{R} &=\int_{0}^{R} dR^\prime\cdot Q(R^\prime) \\
+% < Q >_{t} &=\int dt^\prime\cdot Q(t^\prime)
+% \end{align*}
+% The momentum equation can be further modified as
+% \begin{align*}
+% \int dz[ \partial _{t}< j> _{\phi }]  = &-\int dz\partial _{R}< jv_{R}> _{\phi } -\int dz\partial _{z}< jv_{z}> _{\phi } \\
+% &-\int dz\partial _{R}\left( R^{2}< B_{R} B_{\phi }> _{\phi }\right) -\int dz\partial _{z}\left( R^{2}< B_{z} B_{\phi }> _{\phi }\right) -\int dzR< \rho \partial _{\phi } \Phi _{g}> _{\phi }\\
+% \partial _{t}< j> _{\phi ,z}  = &-\partial _{R}< jv_{R}> _{\phi ,z} -< jv_{z}> _{\phi } |_{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}} \\
+% &-\partial _{R}\left( R^{2}< B_{R} B_{\phi }> _{\phi ,z}\right) -R^{2}< B_{z} B_{\phi }> _{\phi } |_{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}} -R< \rho \partial _{\phi } \Phi _{g}> _{\phi ,z}
+% \end{align*}
+% We can reformulate the radial balance into a more compact form: 
 % \begin{equation*}
-% \frac{\partial (\rho v)}{\partial t} +\nabla \cdot (\rho vv+\overline{P}\mathbb{I} -BB)=-\rho \nabla \Phi 
+% \partial _{t}\left(\frac{dJ}{dR}\right) =\frac{\partial \dot{J}_{\mathrm{adv} ,R}}{\partial R} +\frac{dT_{\mathrm{adv} ,z}}{dR} +\frac{\partial \dot{J}_{\mathrm{mag} ,R}}{\partial R} +\frac{dT_{mag,z}}{dR} +\frac{dT_{\mathrm{grav}}}{dR}
 % \end{equation*}
-Angular momentum flux advected along the disk can be calculated by doing the integration in the $\phi$ and z directions. For convenience, in the following we will use the notation:
-\begin{align*}
-\displaystyle < Q >_{\phi ,z}( R) &=\int _{0}^{2\pi } d\phi^\prime \int _{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}} dz^\prime\cdot Q( R,\phi^\prime ,z^\prime) \\
-< Q >_{R} &=\int_{0}^{R} dR^\prime\cdot Q(R^\prime) \\
-< Q >_{t} &=\int dt^\prime\cdot Q(t^\prime)
-\end{align*}
-The momentum equation can be further modified as
-\begin{align*}
-\int dz[ \partial _{t}< j> _{\phi }]  = &-\int dz\partial _{R}< jv_{R}> _{\phi } -\int dz\partial _{z}< jv_{z}> _{\phi } \\
-&-\int dz\partial _{R}\left( R^{2}< B_{R} B_{\phi }> _{\phi }\right) -\int dz\partial _{z}\left( R^{2}< B_{z} B_{\phi }> _{\phi }\right) -\int dzR< \rho \partial _{\phi } \Phi _{g}> _{\phi }\\
-\partial _{t}< j> _{\phi ,z}  = &-\partial _{R}< jv_{R}> _{\phi ,z} -< jv_{z}> _{\phi } |_{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}} \\
-&-\partial _{R}\left( R^{2}< B_{R} B_{\phi }> _{\phi ,z}\right) -R^{2}< B_{z} B_{\phi }> _{\phi } |_{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}} -R< \rho \partial _{\phi } \Phi _{g}> _{\phi ,z}
-\end{align*}
-We can reformulate the radial balance into a more compact form: 
-\begin{equation*}
-\partial _{t}\left(\frac{dJ}{dR}\right) =\frac{\partial \dot{J}_{\mathrm{adv} ,R}}{\partial R} +\frac{dT_{\mathrm{adv} ,z}}{dR} +\frac{\partial \dot{J}_{\mathrm{mag} ,R}}{\partial R} +\frac{dT_{mag,z}}{dR} +\frac{dT_{\mathrm{grav}}}{dR}
-\end{equation*}
-where we have defined 
+% where we have defined 
 
-\begin{equation*}
-\begin{aligned}
- & ( 1) \ \mathrm{radial\ dependence\ of\ total\ angular\ mometum} & \frac{dJ}{dR} & =-< j> _{\phi ,z}\\
- & ( 2) \ \mathrm{inward\ angular\ momentum\ flux\ from\ advection} & \dot{J}_{\mathrm{adv} ,R} & =-< jv_{R}> _{\phi ,z}\\
- & ( 3) \ \mathrm{torque\ from\ vertical\ transport( wind)} & \left< \frac{dT_{\mathrm{adv} ,z}}{dR}\right> _{R} & =-\int dR^\prime < jv_{z}> _{\phi } |_{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}}\\
- & ( 4) \ \mathrm{inward\ angular\ momentum\ flux\ from\ magnetic\ transport\ in\ the\ radial} & \dot{J}_{\mathrm{mag} ,R} & =-R^{2}< B_{R} B_{\phi }> _{\phi ,z}\\
- & ( 5) \ \mathrm{magnetic\ torque\ per\ unit\ radius} & \left< \frac{dT_{mag,z}}{dR}\right> _{R} & =-\int dR^\prime R^{\prime 2}< B_{z} B_{\phi }> _{\phi } |_{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}}\\
- & ( 6) \ \mathrm{gravitational\ torque\ per\ unit\ radius} & \left< \frac{dT_{\mathrm{grav}}}{dR}\right> _{R} & =-\int dR^\prime R^\prime < \rho \partial _{\phi } \Phi _{g}> _{\phi ,z}
-\end{aligned}
-\end{equation*}
-After we do the time averaging of the above equation and assume a steady state of accretion $\displaystyle ( \partial _{t} =0)$, the accretion disk reaches a steady state. 
-\begin{equation*}
-\frac{d<\dot{J}>_t}{dR} =\frac{\partial }{\partial R}(< \dot{J}_{\mathrm{adv} ,R}> _{t} +< \dot{J}_{\mathrm{mag} ,R}> _{t}) +\left< \frac{dT_{\mathrm{adv} ,z}}{dR}\right> _{t} +\left< \frac{dT_{mag,z}}{dR}\right> _{t} +\left< \frac{dT_{\mathrm{grav}}}{dR}\right> _{t}
-\end{equation*}
-Integrating along the radial direction from the coordinate pole (which is also the location where different torque components vanishes due to $\displaystyle R\equiv 0$), we have 
-\begin{equation*}
- <\dot J_{B}>_t=\dot{<J>_t}=< \dot{J}_{\mathrm{adv} ,R}> _{t} +< \dot{J}_{\mathrm{mag} ,R}> _{t} +\left< \frac{dT_{\mathrm{adv} ,z}}{dR}\right> _{R,t} +\left< \frac{dT_{mag,z}}{dR}\right> _{R,t} +\left< \frac{dT_{\mathrm{grav}}}{dR}\right> _{R,t}
-\end{equation*}
-where $\dot J_{B}$ is the total torque exerted directly onto the binary.
+% \begin{equation*}
+% \begin{aligned}
+%  & ( 1) \ \mathrm{radial\ dependence\ of\ total\ angular\ mometum} & \frac{dJ}{dR} & =-< j> _{\phi ,z}\\
+%  & ( 2) \ \mathrm{inward\ angular\ momentum\ flux\ from\ advection} & \dot{J}_{\mathrm{adv} ,R} & =-< jv_{R}> _{\phi ,z}\\
+%  & ( 3) \ \mathrm{torque\ from\ vertical\ transport( wind)} & \left< \frac{dT_{\mathrm{adv} ,z}}{dR}\right> _{R} & =-\int dR^\prime < jv_{z}> _{\phi } |_{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}}\\
+%  & ( 4) \ \mathrm{inward\ angular\ momentum\ flux\ from\ magnetic\ transport\ in\ the\ radial} & \dot{J}_{\mathrm{mag} ,R} & =-R^{2}< B_{R} B_{\phi }> _{\phi ,z}\\
+%  & ( 5) \ \mathrm{magnetic\ torque\ per\ unit\ radius} & \left< \frac{dT_{mag,z}}{dR}\right> _{R} & =-\int dR^\prime R^{\prime 2}< B_{z} B_{\phi }> _{\phi } |_{z_{\mathrm{lower}}}^{z_{\mathrm{upper}}}\\
+%  & ( 6) \ \mathrm{gravitational\ torque\ per\ unit\ radius} & \left< \frac{dT_{\mathrm{grav}}}{dR}\right> _{R} & =-\int dR^\prime R^\prime < \rho \partial _{\phi } \Phi _{g}> _{\phi ,z}
+% \end{aligned}
+% \end{equation*}
+% After we do the time averaging of the above equation and assume a steady state of accretion $\displaystyle ( \partial _{t} =0)$, the accretion disk reaches a steady state. 
+% \begin{equation*}
+% \frac{d<\dot{J}>_t}{dR} =\frac{\partial }{\partial R}(< \dot{J}_{\mathrm{adv} ,R}> _{t} +< \dot{J}_{\mathrm{mag} ,R}> _{t}) +\left< \frac{dT_{\mathrm{adv} ,z}}{dR}\right> _{t} +\left< \frac{dT_{mag,z}}{dR}\right> _{t} +\left< \frac{dT_{\mathrm{grav}}}{dR}\right> _{t}
+% \end{equation*}
+% Integrating along the radial direction from the coordinate pole (which is also the location where different torque components vanishes due to $\displaystyle R\equiv 0$), we have 
+% \begin{equation*}
+%  <\dot J_{B}>_t=\dot{<J>_t}=< \dot{J}_{\mathrm{adv} ,R}> _{t} +< \dot{J}_{\mathrm{mag} ,R}> _{t} +\left< \frac{dT_{\mathrm{adv} ,z}}{dR}\right> _{R,t} +\left< \frac{dT_{mag,z}}{dR}\right> _{R,t} +\left< \frac{dT_{\mathrm{grav}}}{dR}\right> _{R,t}
+% \end{equation*}
+% where $\dot J_{B}$ is the total torque exerted directly onto the binary.
 
-\section{Pedagogical Introduction: GRMHD}
-[Valencia Formulations] The compact form of the relativistic MHD equations can be written in the conservative Valencia formulations.
-\begin{equation}
-    \partial_t(\sqrt{\gamma} \boldsymbol{U})+\partial_i\left(\sqrt{\gamma} \boldsymbol{F}^i\right)=\sqrt{\gamma} \boldsymbol{S}
-\end{equation}
-where $\boldsymbol{U}$ is the conserved variables, $\boldsymbol{F}^i$ is the fluxes, and $\boldsymbol{S}$ is the source terms.
+% \section{Pedagogical Introduction: GRMHD}
+% [Valencia Formulations] The compact form of the relativistic MHD equations can be written in the conservative Valencia formulations.
+% \begin{equation}
+%     \partial_t(\sqrt{\gamma} \boldsymbol{U})+\partial_i\left(\sqrt{\gamma} \boldsymbol{F}^i\right)=\sqrt{\gamma} \boldsymbol{S}
+% \end{equation}
+% where $\boldsymbol{U}$ is the conserved variables, $\boldsymbol{F}^i$ is the fluxes, and $\boldsymbol{S}$ is the source terms.
 
-The state vectors $\boldsymbol{U}$, flux vectors $\boldsymbol{F}^i$, and source terms $\boldsymbol{S}$ have the following form:
-\begin{equation}
-    \boldsymbol{U}=\left(\begin{array}{c}
-    D \\
-    S_j \\
-    \mathscr{U} \\
-    B^j
-    \end{array}\right), \quad \quad \boldsymbol{F}^i=\left(\begin{array}{c}
-    D \mathscr{V}^i \\
-    \alpha W^i{ }_j-\beta^i S_j \\
-    \alpha S^i-\beta^{i \mathscr{U}} \\
-    B^j \mathscr{Y}^i-B^i \mathscr{V}^j
-    \end{array}\right),
-\end{equation}
-\begin{equation}
-    S=\left(\begin{array}{c}
-    0 \\
-    \frac{1}{2} \alpha W^{i k} \partial_j \gamma_{i k}+S_i \partial_j \beta^i-\mathscr{U} \partial_j \alpha \\
-    \frac{1}{2} W^{i k} \beta^j \partial_j \gamma_{i k}+W_i^j \partial_j \beta^i-S^j \partial_j \alpha \\
-    0
-    \end{array}\right) .
-\end{equation}
+% The state vectors $\boldsymbol{U}$, flux vectors $\boldsymbol{F}^i$, and source terms $\boldsymbol{S}$ have the following form:
+% \begin{equation}
+%     \boldsymbol{U}=\left(\begin{array}{c}
+%     D \\
+%     S_j \\
+%     \mathscr{U} \\
+%     B^j
+%     \end{array}\right), \quad \quad \boldsymbol{F}^i=\left(\begin{array}{c}
+%     D \mathscr{V}^i \\
+%     \alpha W^i{ }_j-\beta^i S_j \\
+%     \alpha S^i-\beta^{i \mathscr{U}} \\
+%     B^j \mathscr{Y}^i-B^i \mathscr{V}^j
+%     \end{array}\right),
+% \end{equation}
+% \begin{equation}
+%     S=\left(\begin{array}{c}
+%     0 \\
+%     \frac{1}{2} \alpha W^{i k} \partial_j \gamma_{i k}+S_i \partial_j \beta^i-\mathscr{U} \partial_j \alpha \\
+%     \frac{1}{2} W^{i k} \beta^j \partial_j \gamma_{i k}+W_i^j \partial_j \beta^i-S^j \partial_j \alpha \\
+%     0
+%     \end{array}\right) .
+% \end{equation}
 
-\begin{eqnarray}
-  \label{eq:1-1}
-  &&\nabla_\mu \tilde{J}^\mu = \nabla_\mu \rho u^\mu = 0\,,\\
-  %
-  \nonumber \\
-  %
-  \label{eq:1-2}
-  &&\nabla_\mu T^{\mu \nu} = 0\,,
-\end{eqnarray}
+% \begin{eqnarray}
+%   \label{eq:1-1}
+%   &&\nabla_\mu \tilde{J}^\mu = \nabla_\mu \rho u^\mu = 0\,,\\
+%   %
+%   \nonumber \\
+%   %
+%   \label{eq:1-2}
+%   &&\nabla_\mu T^{\mu \nu} = 0\,,
+% \end{eqnarray}
 
-We can start from the covariant continuity equation \eqref{eq:1-1}, which
-can be written as
+% We can start from the covariant continuity equation \eqref{eq:1-1}, which
+% can be written as
 
-\begin{align}
-\nabla_\mu \left(\rho u^\mu\right) &= \frac{1}{\sqrt{-g}} \partial_\mu
-\left(\sqrt{-g} \rho u^\mu\right) \notag \\ &= \frac{1}{\sqrt{-g}}
-\left[\partial_t \left(\sqrt{-g} \rho u^t\right) + \partial_i
-  \left(\sqrt{-g} \rho u^i\right)\right] = 0\,, \label{eq:continuity}
-\end{align}
+% \begin{align}
+% \nabla_\mu \left(\rho u^\mu\right) &= \frac{1}{\sqrt{-g}} \partial_\mu
+% \left(\sqrt{-g} \rho u^\mu\right) \notag \\ &= \frac{1}{\sqrt{-g}}
+% \left[\partial_t \left(\sqrt{-g} \rho u^t\right) + \partial_i
+%   \left(\sqrt{-g} \rho u^i\right)\right] = 0\,, \label{eq:continuity}
+% \end{align}
 
 
 
+\section*{References}
+
+\bibliographystyle{plain}
 \bibliography{cbd_ref}
+
 \end{document}
